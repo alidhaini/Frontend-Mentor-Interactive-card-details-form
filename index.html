@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles/general.css">
+  <link rel="stylesheet" href="./styles/container.css">
+  <link rel="stylesheet" href="./styles/form.css">
+  <link rel="stylesheet" href="./styles/thank.css">
+
+</head>
+<body>
+    <div class="container">
+
+      <!-- main ( bg )-->
+      <div class="main">
+        
+        <div class="bg-cards-wrapper">
+
+          <div class="bg-card-back-wrapper">
+            <img class="bg-card-back" src="./images/bg-card-back.png" alt="bg-card-back">
+            <p class="bg-card-back__p">000</p>
+          </div>
+  
+          <div class="bg-card-front-wrapper">
+            <div class="front-card_content">
+                <img class="bg-card-front" src="./images/bg-card-front.png" alt="bg-card-front">
+                <img class="bg-card__logo" src="./images/card-logo.svg" alt="">
+                <p class="bg-card__number">0000 0000 0000 0000</p>
+                <p class="bg-card__cardholder-name">JANE APPLESEED</p>
+                <p class="bg-card__exp-date"><span class="bg-card__exp_date-month">00</span>/<span class="bg-card__exp_date-year">00</span></p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <!-- end -->
+      <div class="form-wrapper">
+          <form  id="form">
+
+              <div class="form-item">
+                <label for="name">
+                 <p>Cardholder name</p>
+                </label>
+                <input class="name-input" type="text" id="name" placeholder="e.g. Jane Appleseed">
+                <p class="name_input_error">The name shall between 3 and 24 characters</p>
+              </div>
+
+              <div class="form-item">
+                <label for="num">
+                 <p>Card Number</p>
+                </label>
+                <input class="num-input" id="num" type="text" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" oninput="formatCreditCardNumber(this)">
+                <p class="card_number_error">Wrong format, numbers only</p>
+                <p class="card_number_error-length">must be 16 digit</p>
+              </div>
+
+              <div class="form-item">
+                <div class="date-inputs">
+
+                  <div>
+                    <label for="date">
+                      <p>Exp. Date (MM/YY)</p>
+                    </label>
+                    <div style="display: flex;gap: 0.5rem;">
+                      <input class="month-input" id="date" type="number" placeholder="MM" min="1" max="12"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2">
+                      <input class="year-input" id="MY" type="number" placeholder="YY" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2">
+                    </div>
+                  <!-- <p class="month_input_error">Can't be blank</p> -->
+                  </div>
+                  
+                  <div>
+                    <label for="cvc">
+                      <p>cvc</p>
+                    </label>
+                    <input class="cvc-input" id="cvc" type="number" placeholder="e.g. 123" 
+                      oninput="javascript: 
+                                        value = this.value;
+                                        if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);//to have only 3 digits and to ensure having no characters 
+                                        if(/[^0-9]/.test(value)) this.value = '' ; " 
+                                        maxlength="3" >
+                  <!-- <p class="cvc_input_error">Can't be blank</p> -->
+                  </div>
+                  
+                </div>
+                    <div class="error-wrapper">
+                      <p class="month_input_error">Can't be blank</p>
+                      <p class="cvc_input_error">Can't be blank</p>
+                    </div>
+              </div>
+
+              
+              <div class="form-item">
+                <button class="form-btn" type="submit">Confirm</button>
+              </div>
+          </form>
+        </div>
+        
+        <div style="display: none;" class="thank-wrapper">
+          <div class="thank">
+            <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+            <p class="thank_title">Thank you!</p>
+            <p class="thank_description">We've added your card details</p>
+            <button class="thank_btn">Continue</button>
+          </div>
+        </div>
+
+    </div>
+
+    <script src="source/actions.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

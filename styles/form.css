@@ -1,0 +1,246 @@
+.form-wrapper{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.form-item{
+    margin-bottom: 1rem;
+}
+
+label p{
+    font-size: var(--size-sm);
+    white-space: nowrap;
+    letter-spacing: 0.1rem;
+}
+
+input{
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border-radius: 10px;
+    border: 1px solid var(--clr-lightGrayishViolet);
+    font-size: var(--size-sm);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    outline: none;
+}
+
+input:focus{
+    border-color: var(--clr-veryDarkViolet);
+    color: var(--clr-veryDarkViolet);
+}
+
+input::placeholder{
+    font-size: var(--size-sm);
+    color: var(--clr-lightGrayishViolet);
+}
+
+
+.date-inputs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.date-inputs div:not(:last-child){
+    flex: 1;
+}
+.date-inputs div:last-child{
+    flex: 2;
+}
+
+.form-btn{
+    font-size: var(--size-sm);
+    width: 100%;
+    background-color: var(--clr-veryDarkViolet);
+    color: var(--clr-white);
+    padding: 0.8rem;
+    border-radius: 10px;;
+}
+
+.invalid-input{
+    border-color: red;
+}
+
+.month_input_error,
+.name_input_error,
+.year_input_error,
+.cvc_input_error
+{
+    visibility: hidden;
+    white-space: nowrap;
+    font-size: var(--size-sm);
+    color: red;
+    margin-top: 0.2rem;
+}
+
+.card_number_error-length,
+.card_number_error{
+    display: none;
+    white-space: nowrap;
+    font-size: var(--size-sm);
+    color: red;
+    margin-top: 0.2rem;
+}
+
+.error-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.month_input_error{
+    flex: 3;
+}
+
+.cvc_input_error{
+    flex: 2;
+}
+@media (min-width:375px) {
+    .form-item{
+        margin-bottom: 2rem;
+    }
+    
+    label p{
+        font-size: 1rem;
+    }
+    
+    input{
+        padding: 1rem;
+        margin-top: 0.3rem;
+        font-size: 18px;
+    }
+    
+    input::placeholder{
+        font-size: 18px;
+    }
+    
+    
+    .form-btn{
+        font-size: 18px;
+        padding: 1rem;
+    }
+    
+    
+    .month_input_error,
+    .name_input_error,
+    .year_input_error,
+    .cvc_input_error
+    {
+        font-size: 0.8rem;
+    }
+    
+    .card_number_error-length,
+    .card_number_error{
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width:1024px) and (max-height: 1024px) {
+    .form-wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .form-item{
+        margin-bottom: 0.5rem;
+    }
+    
+    label p{
+        font-size: var(--size-xs);
+        white-space: nowrap;
+        letter-spacing: 0.1rem;
+    }
+    
+    input{
+        padding: 0.8rem;
+        margin-top: 0.3rem;
+        border-radius: 10px;
+        border: 1px solid var(--clr-lightGrayishViolet);
+        font-size: var(--size-sm);
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        outline: none;
+    }
+    
+    input:focus{
+        border-color: var(--clr-veryDarkViolet);
+        color: var(--clr-veryDarkViolet);
+    }
+    
+    input::placeholder{
+        font-size: var(--size-sm);
+        color: var(--clr-lightGrayishViolet);
+    }
+    
+    
+    .date-inputs{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+    .date-inputs div:not(:last-child){
+        flex: 1;
+    }
+    .date-inputs div:last-child{
+        flex: 2;
+    }
+    
+    .form-btn{
+        font-size: var(--size-sm);
+        width: 100%;
+        background-color: var(--clr-veryDarkViolet);
+        color: var(--clr-white);
+        padding: 0.8rem;
+        border-radius: 10px;;
+    }
+    
+    .invalid-input{
+        border-color: red;
+    }
+    
+    .month_input_error,
+    .name_input_error,
+    .year_input_error,
+    .cvc_input_error
+    {
+        visibility: hidden;
+        white-space: nowrap;
+        font-size: var(--size-xs);
+        color: red;
+        margin-top: 0.2rem;
+    }
+    
+    .card_number_error-length,
+    .card_number_error{
+        display: none;
+        white-space: nowrap;
+        font-size: var(--size-xs);
+        color: red;
+        margin-top: 0.2rem;
+    }
+    
+    .error-wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .month_input_error{
+        flex: 3;
+    }
+    
+    .cvc_input_error{
+        flex: 2;
+    }
+}
